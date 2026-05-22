@@ -20,10 +20,42 @@ def theTOS():
         else:
             break # This prevents it from looping again so pls dont remove
         
+
+def basic():
+    while True:
+        try:
+            
+            calc = input("Enter ur calc here")
+            print(f"Ur answer would be {eval(calc)}")
+        except SyntaxError:
+            print(f"Your input of {calc} is incorrect so if u use 3x3 do 3*3")
+            continue
+        except NameError:
+            print(f"Your input of {calc} is stupid and is probaly using non-integer numbers")
+            continue
+        except TypeError:
+            print(f"Your input of {calc} contains brackets and sadly the integer cant handle them but soon the calculator will")
+            continue
+        
+
+
+
 rootTOS = theTOS()
 
 if rootTOS == "N":
     sys.exit()
 elif rootTOS == "Y":
     print("Now I am not held accountable for silly stuff u do")
+
+time.sleep(1)
+
+print("We will be testing inputs with + - / and *")
+
+time.sleep(1)
+
+print("So a good input would be '3+3' and u get the answer below")
+
+basic()
+
+
 
