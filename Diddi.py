@@ -23,10 +23,10 @@ def theTOS():
 
 def basic():
     while True:
-        try:
+        try:  # Keep this in the try statement to handle errors
             
-            calc = input("Enter ur calc here")
-            print(f"Ur answer would be {eval(calc)}")
+            calc = input("Enter ur calc here -> ")
+            print(f"Ur answer would be: {eval(calc)}") # Eval allows code execution, will try cleanse this later
         except SyntaxError:
             print(f"Your input of {calc} is incorrect so if u use 3x3 do 3*3")
             continue
