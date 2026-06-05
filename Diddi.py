@@ -24,41 +24,52 @@ def theTOS():
 
 def basic():
     while True:
-        try:  # Keep this in the try statement to handle errors
+        try:
         
             calc = input("Enter ur calc here -> ")
             
-            the_replacer() == calc
+            ifireplacedu = the_replacer(calc)
+
+            print(f"{ifireplacedu}")
+            print(f"Before I throw an error at u sir the calc varaible is {calc}")
+            print(f"Ur answer would be: {eval(ifireplacedu)}") # Eval allows code execution, will try cleanse this later
 
             if 'pet' in calc:
                 print("We will activate cowsay nwo!11")
 
                 
             else:
-                tempcorrection = re.search("^÷.*X$", calc)
-                print(f"Ur answer would be: {exec(calc)}") # Eval allows code execution, will try cleanse this later
-                    
-    
-
+                print("Bruh what happened")
+        
         except (SyntaxError, NameError , TypeError):   # Cleaner
             print(f"Pls do proper inputs")
             continue
 
 
-def the_replacer(e):
+
+
+def the_replacer(ineedtobereplaced):
 
     while True:
-        if 'x' in e:
-                re.sub('x', '*', e)
+        if 'x' in ineedtobereplaced:
+                print("U hit (x) if in the replacer")
+                thanksforeplacingme = ineedtobereplaced.replace("x", "*")
+                return(thanksforeplacingme) #Pls reutn it u literally looped it like an idiot
 
-        elif 'X' in e:
-                re.sub('X', '*', e)
+        elif 'X' in ineedtobereplaced:
+                print("U hit (X) if in the replacer")
+                thanksforeplacingme = ineedtobereplaced.replace("X", "*")
+                return(thanksforeplacingme)
 
-        elif '÷' in e:
-                re.sub('÷', '*', e)
+        elif '÷' in ineedtobereplaced:
+                print("U hit (÷) if in the replacer")
+                thanksforeplacingme = ineedtobereplaced.replace("÷", "/")
+                return(thanksforeplacingme)
             
         else:
-                return            
+                print("U hit else")
+                return(ineedtobereplaced)
+                            
             
             
 
