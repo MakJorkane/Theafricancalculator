@@ -3,11 +3,12 @@ import math
 import statistics
 import random
 import time
-
+import cowsay
+import re #should help with cleaner user inputs
 
 def theTOS():
+    print("Welcome to thy calculator, currently inputs will be from the CLI, if you want to perform certain functions eg the mean of a value you just type mean")
     while True:
-        print("Welcome to thy calculator, currently inputs will be from the CLI, if you want to perform certain functions eg the mean of a value you just type mean")
         time.sleep(2)
         print("Read all the instructions on the paper, do you accept the calculator TOS?  (INPUT Y OR N case sensitive)")
         TOS = str(input("- >").capitalize().strip()) # Case sensitive ppl
@@ -18,27 +19,57 @@ def theTOS():
             print("Ok u cant use the calculator turn me on again if u feel like accepting the TOS")
             return TOS
         else:
-            break # This prevents it from looping again so pls dont remove
+            pass # This prevents it from looping again so pls dont remove
         
 
 def basic():
     while True:
         try:  # Keep this in the try statement to handle errors
-            
+        
             calc = input("Enter ur calc here -> ")
-            print(f"Ur answer would be: {eval(calc)}") # Eval allows code execution, will try cleanse this later
-        except SyntaxError:
-            print(f"Your input of {calc} is incorrect so if u use 3x3 do 3*3")
+            
+            the_replacer() == calc
+
+            if 'pet' in calc:
+                print("We will activate cowsay nwo!11")
+
+                
+            else:
+                tempcorrection = re.search("^÷.*X$", calc)
+                print(f"Ur answer would be: {exec(calc)}") # Eval allows code execution, will try cleanse this later
+                    
+    
+
+        except (SyntaxError, NameError , TypeError):   # Cleaner
+            print(f"Pls do proper inputs")
             continue
-        except NameError:
-            print(f"Your input of {calc} is stupid and is probaly using non-integer numbers")
-            continue
-        except TypeError:
-            print(f"Your input of {calc} contains brackets and sadly the integer cant handle them but soon the calculator will")
-            continue
+
+
+def the_replacer(e):
+
+    while True:
+        if 'x' in e:
+                re.sub('x', '*', e)
+
+        elif 'X' in e:
+                re.sub('X', '*', e)
+
+        elif '÷' in e:
+                re.sub('÷', '*', e)
+            
+        else:
+                return            
+            
+            
+
         
 
 
+            
+
+       
+
+    
 
 rootTOS = theTOS()
 
@@ -57,5 +88,6 @@ print("So a good input would be '3+3' and u get the answer below")
 
 basic()
 
+ilookfor = set("X x ÷" .split())
 
-
+    
