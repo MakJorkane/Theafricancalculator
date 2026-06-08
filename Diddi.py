@@ -29,9 +29,7 @@ def basic():
             
             ifireplacedu = the_replacer(calc)
 
-            print(f"{ifireplacedu}")
-            print(f"Before I throw an error at u sir the calc varaible is {calc}")
-            print(f"Ur answer would be: {eval(ifireplacedu)}") # Eval allows code execution, will try cleanse this later
+
 
             if 'pet' in calc:
                 print("We will activate cowsay nwo!11")
@@ -40,6 +38,12 @@ def basic():
                 
             else:
                 print("Bruh what happened")
+
+            
+            print(f"{ifireplacedu}")
+            print(f"{moowoo}")
+            print(f"Before I throw an error at u sir the calc varaible is {calc}")
+            print(f"Ur answer would be: {eval(ifireplacedu)}") # Eval allows code execution, will try cleanse this later
         
         except (SyntaxError, NameError , TypeError):   # Cleaner
             print(f"Pls do proper inputs")
@@ -62,13 +66,7 @@ def the_replacer(ineedtobereplaced):
                 print("U hit (÷) if in the replacer")
                 thanksforeplacingme = ineedtobereplaced.replace("÷", "/")
                 return(thanksforeplacingme)
-        
-        elif 'pet' in ineedtobereplaced:
-             print("Wow time 2 go to cowsay")
-             the_cowsay(ineedtobereplaced)
-
-
-            
+    
         else:
                 print("U hit else")
                 return(ineedtobereplaced)
@@ -79,61 +77,109 @@ def the_cowsay(iwanttomoo):
      print(f"U can pick from {cowsay.char_names}")
      print(f"{iwanttomoo}")
      time.sleep(5)
-     pickthypet = input("What pet u lowkey what???")
+     
 
-     if 'beavis' in pickthypet:
-        print("U picked beavis")
+     while True:
+
+        pickthypet = input("What pet u lowkey what??? -> ")
+        
+
+        if 'beavis' in pickthypet:
+            print("U picked beavis")
+            return pickthypet
+            
+
+        elif 'cheese' in pickthypet:
+            print("U picked cheese")
+            return pickthypet
+            break
+        
+        elif 'cow' in pickthypet:
+            print("U picked cow")
+            return pickthypet
+            break
+        
+        elif 'daemon' in pickthypet:
+            print("You picked daemon")
+            return pickthypet
+            break
+        
+        elif 'dragon' in pickthypet:
+            print("You picked the dragon")
+            return pickthypet
+            break
+        
+        elif 'fox' in pickthypet:
+            print("You picked the fox")
+            return pickthypet
+            break
+        
+        elif 'ghostbusters' in pickthypet:
+            print("You pick ghostbusters scary!11")
+            return pickthypet
+            break
+
+        elif 'kitty' in pickthypet:
+            print("You picked the kitty")
+            return pickthypet
+            break
+
+        elif 'meow' in pickthypet:
+            print("You picked the meow")
+            return pickthypet
+            break
+
+        elif 'miki' in pickthypet:
+            print("You picked miki")
+            return pickthypet
+            break
+        
+        elif 'octopus' in pickthypet:
+            print("You picked the ocotpus")
+            return pickthypet
+            break
+
+        elif 'pig' in pickthypet:
+            print("You picked the pig")
+            return pickthypet
+            break
+        
+        elif 'stegosaurus' in pickthypet:
+            print("You picked the stegosaurus")
+            return pickthypet
+            break
+
+        elif 'stimpy' in pickthypet:
+            print("You picked the stimpy")
+            return pickthypet
+            break
+
+        elif 'trex' in pickthypet:
+            print("You picked the trex")
+            return pickthypet
+            break
+
+        elif 'turkey' in pickthypet:
+            print("You picked the turkey")
+            return pickthypet
+            break
+
+        elif 'turtle' in pickthypet:
+            print("You picked the turtle")
+            return pickthypet
+            break
+
+        elif 'tux' in pickthypet:
+            print("You picked tux which is like linux")
+            return pickthypet
+            break
+        
+        else:
+            print("Pick a valid pet pls")
     
-     elif 'cheese' in pickthypet:
-        print("U picked cheese")
+print("We have broken out!!!!!")
     
-     elif 'cow' in pickthypet:
-        print("U picked cow")
-     
-     elif 'daemon' in pickthypet:
-        print("You picked daemon")
-     
-     elif 'dragon' in pickthypet:
-        print("You picked the dragon")
-     
-     elif 'fox' in pickthypet:
-        print("You picked the fox")
-     
-     elif 'ghostbusters' in pickthypet:
-        print("You pick ghostbusters scary!11")
-
-     elif 'kitty' in pickthypet:
-        print("You picked the kitty")
-
-     elif 'meow' in pickthypet:
-        print("You picked the meow")
-
-     elif 'miki' in pickthypet:
-        print("You picked miki")
-    
-     elif 'octopus' in pickthypet:
-        print("You picked the ocotpus")
-
-     elif 'pig' in pickthypet:
-        print("You picked the pig")
-     
-     elif 'stegosaurus' in pickthypet:
-         print("You picked the stegosaurus")
-
-     elif 'stimpy' in pickthypet:
-         print("You picked the stimpy")
-
-     elif 'trex' in pickthypet:
-         print("You picked the trex")
-
-     elif 'turkey' in pickthypet:
-         print("You picked the turkey")
-
-     elif 'turtle' in pickthypet:
-         print("You picked the turtle")
-
-     elif 'tux' in pickthypet:
-          print("You picked tux which is like linux")
+            
          
 
          
