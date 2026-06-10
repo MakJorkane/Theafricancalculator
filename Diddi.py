@@ -26,26 +26,40 @@ def basic():
         try:
         
             calc = input("Enter ur calc here -> ")
-            
-            ifireplacedu = the_replacer(calc)
+            formoocombination = "null"
 
 
 
             if 'pet' in calc:
                 print("We will activate cowsay nwo!11")
                 moowoo = the_cowsay(calc)
+                print(f"Ur new pet is now {moowoo}")
+                basic() # Or else it tries to execute the calculation when the user has not had an input
+
+
+            elif 'x' or 'X' or '÷':
+                calc = the_replacer(calc)
+
+            elif moowoo is not None:
+                print(f"Ur answer would be according to the {moowoo}:")
+                formoocombination = (f"{eval(calc)}") 
+                print(f"{cowsay(moowoo)(formoocombination)}")
+                
+                # {cowsay(moowoo)}{eval(calc)}")
+                
+
 
                 
             else:
                 print("Bruh what happened")
 
             
-            print(f"{ifireplacedu}")
-            print(f"{moowoo}")
+
+            # print(f"{moowoo}")
             print(f"Before I throw an error at u sir the calc varaible is {calc}")
-            print(f"Ur answer would be: {eval(ifireplacedu)}") # Eval allows code execution, will try cleanse this later
+            print(f"Ur answer would be: {eval(calc)}") # Eval allows code execution, will try cleanse this later
         
-        except (SyntaxError, NameError , TypeError):   # Cleaner
+        except ():   # Cleaner
             print(f"Pls do proper inputs")
             continue
 
