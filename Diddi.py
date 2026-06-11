@@ -21,7 +21,7 @@ def theTOS():
         else:
             pass # This prevents it from looping again so pls dont remove
         
-def basic():
+def basic(asumoo):
     while True:
         try:
         
@@ -34,7 +34,7 @@ def basic():
                 print("We will activate cowsay nwo!11")
                 moowoo = the_cowsay(calc)
                 print(f"Ur new pet is now {moowoo}")
-                basic() # Or else it tries to execute the calculation when the user has not had an input
+                basic(moowoo) # Or else it tries to execute the calculation when the user has not had an input
 
 
             elif 'x' or 'X' or '÷':
@@ -58,6 +58,13 @@ def basic():
             # print(f"{moowoo}")
             print(f"Before I throw an error at u sir the calc varaible is {calc}")
             print(f"Ur answer would be: {eval(calc)}") # Eval allows code execution, will try cleanse this later
+            time.sleep(2)
+            # Split up u can delete this depending on what the result is
+            print("Now I will force print the moowoo because its lowkey forced")
+            print(f"Does it print at the root function?!?!?!?!?!?!??! {asumoo}")
+            formoocombination = (f"{eval(calc)}") 
+            printmee = f"{cowsay}, {moowoo}, {formoocombination}"
+            cowsay.{moowoo}(printmee)
         
         except ():   # Cleaner
             print(f"Pls do proper inputs")
@@ -219,7 +226,7 @@ time.sleep(1)
 
 print("So a good input would be '3+3' and u get the answer below")
 
-basic()
+basic(asumoo="I DONT NEED IT")
 
 ilookfor = set("X x ÷" .split())
 
