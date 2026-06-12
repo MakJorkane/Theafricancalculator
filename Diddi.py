@@ -62,9 +62,12 @@ def basic(asumoo):
             # Split up u can delete this depending on what the result is
             print("Now I will force print the moowoo because its lowkey forced")
             print(f"Does it print at the root function?!?!?!?!?!?!??! {asumoo}")
-            formoocombination = (f"{eval(calc)}") 
-            printmee = f"{cowsay}, {moowoo}, {formoocombination}"
-            cowsay.{moowoo}(printmee)
+            
+            
+            if asumoo in cowsay.char_names: # Holy this is peak level intellgence
+                formoocombination = (f"{eval(calc)}")   # Calculates inout and assigns it to foomoocombination
+
+                getattr(cowsay, asumoo)(formoocombination)
         
         except ():   # Cleaner
             print(f"Pls do proper inputs")
