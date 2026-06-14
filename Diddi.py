@@ -66,8 +66,7 @@ def basic(asumoo):
             
             if asumoo in cowsay.char_names: # Holy this is peak level intellgence
                 formoocombination = (f"{eval(calc)}")   # Calculates inout and assigns it to foomoocombination
-
-                getattr(cowsay, asumoo)(formoocombination)
+                getattr(cowsay, asumoo)(formoocombination) 
         
         except ():   # Cleaner
             print(f"Pls do proper inputs")
@@ -89,6 +88,11 @@ def the_replacer(ineedtobereplaced):
         elif '÷' in ineedtobereplaced:
                 print("U hit (÷) if in the replacer")
                 thanksforeplacingme = ineedtobereplaced.replace("÷", "/")
+                return(thanksforeplacingme)
+
+        elif '^' in ineedtobereplaced:
+                print("U hit (^) if in the replacer")
+                thanksforeplacingme = re.sub(r'(\d+)\s*\^\s*(\d+)', r'pow(\1, \2)', ineedtobereplaced) # Ok regex is ugly but like basically it takes into acount for whitespaces and looks for 6 ^ 3 or 6^3
                 return(thanksforeplacingme)
     
         else:
@@ -202,17 +206,7 @@ def the_cowsay(iwanttomoo):
             print("Pick a valid pet pls")
     
 print("We have broken out!!!!!")
-    
-            
-         
 
-         
-
-        
-
-
-    
-     
                         
 rootTOS = theTOS()
 
