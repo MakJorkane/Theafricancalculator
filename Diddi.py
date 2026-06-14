@@ -74,30 +74,25 @@ def basic(asumoo):
 
 def the_replacer(ineedtobereplaced):
 
-    while True:
-        if 'x' in ineedtobereplaced:
-                print("U hit (x) if in the replacer")
-                thanksforeplacingme = ineedtobereplaced.replace("x", "*")
-                return(thanksforeplacingme) #Pls reutn it u literally looped it like an idiot
+    result = ineedtobereplaced
 
-        elif 'X' in ineedtobereplaced:
-                print("U hit (X) if in the replacer")
-                thanksforeplacingme = ineedtobereplaced.replace("X", "*")
-                return(thanksforeplacingme)
+    if 'x' in result:
+            print("U hit (x) if in the replacer")
+            result = result.replace("x", "*")
 
-        elif '÷' in ineedtobereplaced:
-                print("U hit (÷) if in the replacer")
-                thanksforeplacingme = ineedtobereplaced.replace("÷", "/")
-                return(thanksforeplacingme)
+    if 'X' in result:
+            print("U hit (X) if in the replacer")
+            result = result.replace("X", "*")
 
-        elif '^' in ineedtobereplaced:
-                print("U hit (^) if in the replacer")
-                thanksforeplacingme = re.sub(r'(\d+)\s*\^\s*(\d+)', r'pow(\1, \2)', ineedtobereplaced) # Ok regex is ugly but like basically it takes into acount for whitespaces and looks for 6 ^ 3 or 6^3
-                return(thanksforeplacingme)
-    
-        else:
-                print("U hit else")
-                return(ineedtobereplaced)
+    if '÷' in result:
+            print("U hit (÷) if in the replacer")
+            result = result.replace("÷", "/")
+
+    if '^' in result:
+            print("U hit (^) if in the replacer")
+            result = re.sub(r'(\d+)\s*\^\s*(\d+)', r'pow(\1, \2)', result)
+
+    return(result)
         
 def the_cowsay(iwanttomoo):
      print("Ok so basically u can pick a pet so which one do u want")
