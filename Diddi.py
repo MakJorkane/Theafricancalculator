@@ -76,6 +76,11 @@ def the_replacer(ineedtobereplaced):
 
     result = ineedtobereplaced
 
+
+    if re.search(r'\d\s*\(', result):
+            print("Brackets are now here")
+            result = re.sub(r'(\d+)\s*\(', r'\1*(', result)
+
     if 'x' in result:
             print("U hit (x) if in the replacer")
             result = result.replace("x", "*")
