@@ -88,9 +88,38 @@ def the_replacer(ineedtobereplaced):
             print("U hit (÷) if in the replacer")
             result = result.replace("÷", "/")
 
+    if 'pi' in result:
+        print("U hit the (pi) if in he replacer")
+        result = result.replace("pi", "math.pi")
+        print(f"Pi is {result}")
+
+    if 'π' in result:
+        print("U hit the fancy (π) if in he replacer")
+        result = result.replace("π", "math.pi")
+        print(f"Fancy π is {result}")            
+
     if '^' in result:
             print("U hit (^) if in the replacer")
             result = re.sub(r'(\d+)\s*\^\s*(\d+)', r'pow(\1, \2)', result)
+
+    if 'sin' in result:
+        print("U hit the (sin) if in he replacer")
+        result = re.sub(r'sin\s*\(?\s*(\d+\.?\d*)\s*\)?', r'(math.sin(\1))', result) # Anything below here that u want to add u cane ssentialy duplicate as long as it has one parameter pls
+
+    if 'cos' in result:
+        print("U hit the (cos) if in he replacer")
+        result = re.sub(r'cos\s*\(?\s*(\d+\.?\d*)\s*\)?', r'(math.cos(\1))', result)
+
+    if 'tan' in result:
+        print("U hit the (tan) if in he replacer")
+        result = re.sub(r'tan\s*\(?\s*(\d+\.?\d*)\s*\)?', r'(math.tan(\1))', result)
+
+    if 'sqrt' in result:
+        print("U hit the (sqrt) if in he replacer")
+        result = re.sub(r'sqrt\s*\(?\s*(\d+\.?\d*)\s*\)?', r'(math.sqrt(\1))', result)
+        print(f"Sqrt is {result}")
+
+
 
     return(result)
         
