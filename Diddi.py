@@ -124,6 +124,16 @@ def the_replacer(ineedtobereplaced):
         result = re.sub(r'sqrt\s*\(?\s*(\d+\.?\d*)\s*\)?', r'(math.sqrt(\1))', result)
         print(f"Sqrt is {result}")
 
+    if 'e' in result:
+        print("U hit the (e) in the replacer")
+        result = result.replace("e", "math.e")
+        print("Euler")
+
+    if 'log' in result:
+        print("U hit the (log) in the replacer")
+        result = re.sub(r'log\s*\(?\s*(\d+\.?\d*)\s*\)?', r'(math.log(\1))', result)
+        print("Euler")
+
 
 
     return(result)
