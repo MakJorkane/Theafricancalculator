@@ -5,6 +5,7 @@ import random
 import time
 import cowsay
 import re #should help with cleaner user inputs
+from fractions import Fraction
 
 def theTOS():
     print("Welcome to thy calculator, currently inputs will be from the CLI, if you want to perform certain functions eg the mean of a value you just type mean")
@@ -41,7 +42,7 @@ def basic(asumoo):
                 calc = the_replacer(calc)
 
             elif moowoo is not None:
-                print(f"Ur answer would be according to the {moowoo}:")
+                print(f"Ur answer would be according to the {moowoo}:") # Due to amazing code we will never be able to display fractions yet
                 formoocombination = (f"{eval(calc)}") 
                 print(f"{cowsay(moowoo)(formoocombination)}")
                 
@@ -124,6 +125,24 @@ def the_replacer(ineedtobereplaced):
         result = re.sub(r'sqrt\s*\(?\s*(\d+\.?\d*)\s*\)?', r'(math.sqrt(\1))', result)
         print(f"Sqrt is {result}")
 
+    if 'frac' in result:
+        print("U hit the (frac) if in the replacer")
+        def _frac_repl(m):
+            num = float(m.group(1))
+            den = float(m.group(2))
+            return f"({num} / {den})" # Bro why does this not reurn it normally it literally devidies it why does not if flippin return it this is not cool
+        result = re.sub(r'frac\s*\(\s*(-?\d+\.?\d*)\s*\)\s*\(\s*(-?\d+\.?\d*)\s*\)', _frac_repl, result) # We reformat is and call my function but the function is so useless it does not work
+        print(f"Frac is {result}")
+
+    if 'deci' in result:
+        print("U hit the (deci) if in the replacer")
+        def _deci_repl(m):
+            val = float(m.group(1))
+            frac = Fraction(val).limit_denominator()
+            return f"({frac.numerator} / {frac.denominator})"
+        result = re.sub(r'deci\s*\(\s*(-?\d+\.?\d*)\s*\)', _deci_repl, result)
+        print(f"Deci is {result}")
+
     if 'e' in result:
         print("U hit the (e) in the replacer")
         result = result.replace("e", "math.e")
@@ -133,6 +152,11 @@ def the_replacer(ineedtobereplaced):
         print("U hit the (log) in the replacer")
         result = re.sub(r'log\s*\(?\s*(\d+\.?\d*)\s*\)?', r'(math.log(\1))', result)
         print("Euler")
+
+    if 'abs' in result:
+        print("U hit the (abs) if in the replacer")
+        result = re.sub(r'abs\s*\(?\s*(\d+\.?\d*)\s*\)?', r'abs(\1)', result)
+        print("Hot abs")
 
 
 
