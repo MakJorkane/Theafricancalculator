@@ -13,3 +13,8 @@ Pets - You can type "pet" then you will be given a wide range of pets to choose 
 Calculator functions! - Think of operations on your calculator that you would want to do on here, the sin of 3?  Do sin3 want pi just type pi!
 
 Advanced calculator functions!  - If an input like exponents (powers) require two variables you would input like 3^4
+
+
+
+**Update**
+**I will be working on a micropython port depending on the OS, since there is enough ram on the rpi it may be easier to do.  I still need to work on graphing and the solver and error handling (that shouldn't take too long)** 
