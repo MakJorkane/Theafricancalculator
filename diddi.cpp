@@ -3,6 +3,8 @@
 
 int main(){
    
+    bool thevalue = true;
+
     std::string tos; // Tos Yes or NO!!!!!!!!!!!!!!
 
     std::cout << "Welcome to thy calculator, currently inputs will be from the CLI, if you want to perform certain functions eg the mean of a value you just type mean" << '\n';
@@ -10,6 +12,7 @@ int main(){
 
     std::cin >> tos;
 
+    while(thevalue){
     if (tos == "Y" || tos == "y" || tos == "Yes" || tos == "yes"){
         std::cout << ("Good Job");
     }
@@ -17,15 +20,25 @@ int main(){
         std::cout << "Ok u cant use the calculator turn me on again if u feel like accepting the TOS";
         return 0;
     }
-    // Another way to format this could 
-
-    
-
-    
-
     else{
-        std::cout << "Please give valid inputs";
+        std::cout << "Ok so u need valid inputs";
+        main();
     }
+}
+
+    std::cout << "Time to enter your calc: ";
+    std::string userinput;  // Main input
+    
+    std::cin >> userinput;
+
+    if(userinput == "*"){ //Might use switches later because its better than 50 elifs
+
+
+    }
+
+
+
+
 
 
 
