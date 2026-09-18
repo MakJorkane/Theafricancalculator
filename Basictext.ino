@@ -1,4 +1,5 @@
 #include <Wire.h>
+#include <Keypad.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SH110X.h>
 // Height and width
@@ -12,6 +13,37 @@ Adafruit_SH1106G display(
   &Wire1,
   OLED_RESET
 );
+
+
+// Keypad tutorial https://diyarduino101.wordpress.com/2017/07/10/102/
+
+const byte numRows = 2;
+const byte numCols = 2;
+
+char keymap[numRows][numCols] = {
+  {'7', 'C'},
+  {'*', 'D'}
+};
+
+byte rowPins[numRows] = {
+  10,
+  9
+};
+
+byte colPins[numCols] = {
+  16,
+  13
+};
+
+// Creates the keypad
+Keypad myKeypad = Keypad(
+  makeKeymap(keymap),
+  rowPins,
+  colPins,
+  numRows,
+  numCols
+);
+
 
 void setup() {
   Wire1.setSDA(6); // GP6
@@ -28,7 +60,24 @@ void setup() {
   display.setCursor(1, 1); // Basically where u want ur text to start so 1 pixels moved right horizontally and 1 move ddown vertically
   display.print("Hey its me its verity");
   display.display(); // Pls dont forget https://www.instructables.com/Arduino-and-the-SSD1306-OLED-I2C-128x64-Display/#:~:text=The%20Most%20Important%20Bit
+
+  delay(500);
+
+  // Dont spam 7 plssssss and also no calc for a lil bit
+  while (myKeypad.getKey()) {
+    delay(10);
+  }
 }
 
+
 void loop() {
+
+  char keypressed = myKeypad.getKey();
+
+  if (keypressed != NO_KEY) {
+
+    display.print(keypressed);
+
+    display.display();
+  }
 }
